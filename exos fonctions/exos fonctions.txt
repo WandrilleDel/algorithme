@@ -1,0 +1,10 @@
+Exercices sur les fonctions :
+1) Écrire une fonction qui prend en entrée un nombre et qui renvoie ce nombre + 4.
+2) Écrire une fonction qui prend en entrée un nombre et qui affiche ce nombre + 4 dans la console.
+3) Écrire une fonction qui ne prend rien en entrée et qui affiche "Bonjour" dans la console.
+4) Écrire une fonction qui ne prend rien en entrée et qui retourne la chaîne de caractères "Bonjour".
+5) Écrire une fonction qui prend deux nombres en entrée et qui retourne le plus grand des deux.
+6) Écrire une fonction qui prend trois nombres en entrée et qui retourne le plus grand des 3.
+7) Écrire une fonction qui prend en entrée un nom et un nombre, et qui affiche "Bonjour [nom] !" ce nombre de fois là.
+
+Et pour la suite, on pourra chercher des trucs plus compliqués, comme la suite de Fibonacci par exemple.
