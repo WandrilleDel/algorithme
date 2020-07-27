@@ -71,7 +71,7 @@ function fibonacci(n){
     
 
 fibonacci(120);
-*/
+
 //fibonacci en mode récursif
 function fibonacci(x){
     if (x==0){
@@ -89,3 +89,46 @@ function fibonacci(x){
 
 console.log(fibonacci(12));
 
+
+//Exercies tableau!!!:
+// Création du tableau
+let tab = [10,11,12];
+
+// Accéder à une case du tableau tab :
+// tab[1]
+console.log("Case numéro 1 de tab : "+tab[1]);
+tab[1] = 77;
+console.log("Double de la case numéro 1 de tab : "+(2*tab[1]));
+
+// Ajouter un élément à la fin du tableau tab :
+tab.push(100); // Maintenant, le tableau contient 4 variables (10,77,12,100)
+// Mon tableau est égal à [10,77,12,100]
+
+console.log("Taille du tableau : "+tab.length);
+tab.pop();
+console.log("Nouvelle taille du tableau : "+tab.length);
+let x = tab.pop();
+console.log("(Re)nouvelle taille du tableau : "+tab.length);
+console.log("Variable x : "+x);
+*/
+// Créer un tableau t1 qui contient 6 valeurs : 80, 105, 101, 114, 114 et 101.
+let t1 = [80,105,101,114,114,101];
+// Créer un tableau t2 qui contient les valeurs 66, 111, 110, 106, 111, 117 et 114.
+let t2 = [66, 111, 110, 106, 111, 117, 114];
+// Ajouter l'élément 32 au tableau t2.
+t2.push(32);
+// Tester si la case numéro 3 du tableau t1 est plus grande que 100.
+if (t1[3]>100){
+    console.log(t1[3]);
+}
+// Afficher dans la console la taille du tableau t2.
+let b = t2.length;
+console.log(b);
+// Afficher dans la console le dernier élément de t2.
+console.log(t2.pop());
+// Ajouter un par un tous les éléments de t1 au tableau t2.
+
+for (let x=0;x<=5;x++){
+t2.push(t1[x]);
+}
+console.log(t2);
