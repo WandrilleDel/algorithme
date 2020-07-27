@@ -89,10 +89,6 @@ function fibonacci(x){
 
 console.log(fibonacci(12));
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 35703532d7259af367d1a0f5e35dd85b3e079f48
 //Exercies tableau!!!:
 // Création du tableau
 let tab = [10,11,12];
@@ -113,11 +109,6 @@ console.log("Nouvelle taille du tableau : "+tab.length);
 let x = tab.pop();
 console.log("(Re)nouvelle taille du tableau : "+tab.length);
 console.log("Variable x : "+x);
-<<<<<<< HEAD
-*/
-=======
-
->>>>>>> 35703532d7259af367d1a0f5e35dd85b3e079f48
 // Créer un tableau t1 qui contient 6 valeurs : 80, 105, 101, 114, 114 et 101.
 let t1 = [80,105,101,114,114,101];
 // Créer un tableau t2 qui contient les valeurs 66, 111, 110, 106, 111, 117 et 114.
@@ -261,7 +252,7 @@ function verlan(t){
     return t1;
 }
 console.log(verlan(t));
-*/
+
 //Fonction qui reçoit un tableau et un nombre en entrée, et qui répond si le nombre est dans le tableau ou pas (deux versions : une en utilisant une fonction créée précédemment, et une autre sans).
 let t=[3,6,9,12,15];
 let n=0;
@@ -277,8 +268,148 @@ function present(t,n){
 }
 
 console.log(present(t,0));
+
 //Fonction qui reçoit un tableau en entrée, et qui renvoie vrai si le tableau est trié (premier élément plus petit que le deuxième, lui-même plus petit que le troisième, etc), faux sinon.
 
+let tab=[8,56,74,85,100];
+function plusPetit(tab){
+    for(let i=0;i<tab.length;i++){
+        if(tab[i]>tab[i+1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(plusPetit(tab));
 
 //Fonction qui reçoit un tableau **->->trié<-<-** et un nombre, et qui renvoie vrai si le nombre est dans le tableau, faux sinon.
->>>>>>> 35703532d7259af367d1a0f5e35dd85b3e079f48
+let tab=[8,56,74,85,100];
+function plusPetit(tab,x){
+    for(let i=0;i<tab.length;i++){
+        if(x==tab[i]){
+            return true;
+        }
+    }
+    return false;
+}
+
+console.log(plusPetit(tab,85));
+
+//--> dichotomie (optimisation)
+function cutArray(v,tab,i1,i2){
+
+    console.log(i1,i2)
+    
+    if (i1 > i2) {
+
+        return false
+    }
+
+    let indexMilieu = (i1+i2)/2
+
+    if (v == tab[indexMilieu]) {
+        
+        return true
+    }
+
+    if (v > tab[indexMilieu]) {
+
+        return cutArray(v,tab,indexMilieu+1,i2);
+
+    }
+
+    if (v < tab[indexMilieu]) {
+
+        return cutArray(v, tab,i1, indexMilieu-1);
+
+    }
+
+}
+
+let tab = [100,110,1000,2000,3000,4000,5000];
+let i1 = 0;
+let i2 = 6;
+
+let v = 111;
+
+
+console.log(cutArray(v, tab, i1, i2));
+
+//Deuxième plus grand
+//Écrire une fonction qui prend un tableau en entrée et qui retourne le deuxième plus grand élément de celui-ci.
+let t=[11,19,85,185,32];
+let max=t[0];
+let max1=t[1];
+function deuxiemePlusGrand(t){
+let max=t[0];
+let max1=t[1];
+    for(let i=0;i<t.length;i++){
+        if(t[i]>max){
+            max1=max;
+            max=t[i];
+        }
+    }
+    return max1;
+}
+console.log(deuxiemePlusGrand(t));
+
+//Tri à bulle
+//Écrire une fonction qui reçoit un tableau et qui le trie. https://en.wikipedia.org/wiki/Bubble_sort#/media/File:Bubble-sort-example-300px.gif
+let tab = [99,88,55,22,12,2,1,0];
+
+function tri(tab){
+    for(let j=0;j<tab.length;j++){
+        for(let i=0;i<tab.length;i++){
+            let x=tab[i];
+            let y=tab[i+1];
+                if(x>y){
+                    tab[i+1]=x;
+                    tab[i]=y;
+                }
+        }         
+    }
+    return tab;
+}
+console.log(tri(tab));
+*/
+/**Tours de Hanoï
+
+Le but est d'écrire une fonction qui va afficher la solution dans la console.
+Exemple d'utilisation :
+hanoi(2,"Tour 1", "Tour 2", "Tour 3"); // Je demande la solution du problème "Déplacer 2 disques de la Tour 1 vers la Tour 2 en ayant la Tour 3 en intermédiaire.
+/* Affiche dans la console :
+Déplacer de Tour 1 vers Tour 3.
+Déplacer de Tour 1 vers Tour 2.
+Déplacer de Tour 3 vers Tour 2.
+*/
+
+//hanoi(3,"Hello", "!", "world"); // Je demande la solution du problème "Déplacer 3 disques de Hello vers ! en ayant la world en intermédiaire.
+/* Affiche dans la console :
+Déplacer de Hello vers !.
+Déplacer de Hello vers world.
+Déplacer de ! vers world.
+Déplacer de Hello vers !.
+Déplacer de world vers Hello.
+Déplacer de world vers !.
+Déplacer de Hello vers !.
+*/
+/**
+Écrire une fonction qui reçoit deux tableaux triés en entrée et qui retourne la fusion des deux tableaux (toujours triée). Exemple :
+fusion([1,4,5,8], [3,6,9]); // Retourne [1,3,4,5,6,8,9]
+
+Écrire une fonction qui permet de trier un tableau, en utilisant le principe "Diviser pour régner". Pour cela, on peut écrire une fonction récursive qui se contente de trier la première moitié puis la seconde moitié du tableau, séparemment, puis de les fusionner.
+Pour cela, vous aurez peut-être besoin d'une nouvelle fonctionnalité des tableaux : slice() qui permet de faire une copie d'une partie de tableau. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+let t = [1,7,8,9,50,60,100];
+let a = t.slice(2,5); // À partir du 2, en s'arrêtant juste avant le 5.
+console.log(a); // [8,9,50]
+*/
+function centuryFromYear(year) {
+       
+    if(Number.isInteger(year/100)){
+        return year/100;
+    }else{
+   return Math.floor(year/100+1);
+  }
+}
+console.log(centuryFromYear(1700));
